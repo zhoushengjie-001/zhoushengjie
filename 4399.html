@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小游戏</title>
+    <style>
+        #wrap{
+            position: absolute;
+            top: 300px;
+            left: 700px;
+            height: 60px;
+            width: 50px;
+        }
+        .start{
+            background: url(./imas/down.png) no-repeat;
+        }
+        .w{
+            background: url(./imas/up.png) no-repeat;
+        }
+        .s{
+            background: url(./imas/down.png) no-repeat;
+        }
+        .a{
+            background: url(./imas/left.png) no-repeat;
+        }
+        .d{
+            background: url(./imas/right.png) no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap" class="start"></div>
+    <script>
+        let owrap = document.getElementById("wrap");
+        document.onkeydown = function(e){
+            let p = e.keyCode;
+            switch(p){
+                case 87:
+                    owrap.classList.remove("start");
+                    owrap.classList.remove("s");
+                    owrap.classList.remove("a");
+                    owrap.classList.remove("d");
+                    owrap.classList.add("w");
+                    owrap.style.top = owrap.offsetTop - 5 + 'px';
+                break;
+                case 83:
+                owrap.classList.remove("start");
+                owrap.classList.remove("w");
+                owrap.classList.remove("a");
+                owrap.classList.remove("d");
+                owrap.classList.add("s");
+                    owrap.style.top = owrap.offsetTop + 5 + 'px';
+                break;
+                case 65:
+                owrap.classList.remove("start");
+                owrap.classList.remove("w");
+                owrap.classList.remove("d");
+                owrap.classList.remove("s");
+                owrap.classList.add("a");
+                owrap.style.left = owrap.offsetLeft - 5 + 'px';
+                break;
+                case 68:
+                owrap.classList.remove("start");
+                owrap.classList.remove("w");
+                owrap.classList.remove("s");
+                owrap.classList.remove("a");
+                owrap.classList.add("d");
+                owrap.style.left = owrap.offsetLeft + 5 + 'px';
+                break;
+            }
+        };
+    </script>
+</body>
+</html>
